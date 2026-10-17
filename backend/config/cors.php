@@ -1,7 +1,8 @@
 
 <?php
+
 $allowedOrigins = [
-    'https://YOUR-FRONTEND-NAME.onrender.com'
+    'https://hirehub-automated-recruitment-portal.onrender.com'
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
