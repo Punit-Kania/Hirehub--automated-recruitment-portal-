@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HireHub Jobs Test</title>
+</head>
+<body>
+
+    <h1>HireHub Jobs API Test</h1>
+
+    <h2>Create Job</h2>
+
+    <input id="title" placeholder="Job Title">
+    <br><br>
+
+    <input id="company" placeholder="Company">
+    <br><br>
+
+    <input id="location" placeholder="Location">
+    <br><br>
+
+    <textarea id="description" placeholder="Description"></textarea>
+    <br><br>
+
+    <button onclick="createJob()">Create Job</button>
+
+    <pre id="result"></pre>
+
+    <hr>
+
+    <h2>All Jobs</h2>
+
+    <button onclick="getJobs()">Load Jobs</button>
+
+    <pre id="jobs"></pre>
+
+
+    <script>
+
+        async function createJob() {
+
+            const data = {
+                title: document.getElementById("title").value,
+                company: document.getElementById("company").value,
+                location: document.getElementById("location").value,
+                description: document.getElementById("description").value
+            };
+
+            try {
+
+                const response = await fetch(
+                    "api/jobs.php",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    }
+                );
+
+                const result = await response.json();
+
+                document.getElementById("result").textContent =
+                    JSON.stringify(result, null, 2);
+
+            } catch (error) {
+
+                document.getElementById("result").textContent =
+                    "Error: " + error.message;
+            }
+        }
+
+
+        async function getJobs() {
+
+            try {
+
+                const response = await fetch(
+                    "api/jobs.php"
+                );
+
+                const result = await response.json();
+
+                document.getElementById("jobs").textContent =
+                    JSON.stringify(result, null, 2);
+
+            } catch (error) {
+
+                document.getElementById("jobs").textContent =
+                    "Error: " + error.message;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

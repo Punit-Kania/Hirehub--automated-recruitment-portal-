@@ -1,0 +1,4708 @@
+/* =========================================================
+   HIREHUB FUTURISTIC RECRUITMENT PORTAL
+   BLUE + CYAN + PURPLE THEME
+
+   Design:
+   - Deep Navy
+   - Electric Blue
+   - Cyan
+   - Purple
+   - Glassmorphism
+   - 3D Glow
+   - Futuristic Dashboard
+   ========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap'
+);
+
+
+/* =========================================================
+   ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    --hh-bg: #030a28;
+    --hh-bg-2: #06143f;
+    --hh-bg-3: #10083d;
+
+    --hh-navy: #06164d;
+    --hh-navy-light: #0b1d5a;
+
+    --hh-blue: #1769ff;
+    --hh-blue-light: #368dff;
+
+    --hh-cyan: #25d9ff;
+    --hh-cyan-light: #63e8ff;
+
+    --hh-purple: #713cff;
+    --hh-purple-light: #a375ff;
+
+    --hh-magenta: #c13cff;
+
+    --hh-white: #ffffff;
+    --hh-text: #edf3ff;
+    --hh-text-soft: #c4d2ef;
+    --hh-muted: #8499c3;
+    --hh-muted-dark: #5f729a;
+
+    --hh-glass: rgba(255,255,255,0.055);
+    --hh-glass-strong: rgba(255,255,255,0.09);
+
+    --hh-border: rgba(105,160,255,0.17);
+    --hh-border-strong: rgba(77,151,255,0.32);
+
+    --hh-blue-glow:
+        0 0 35px rgba(23,105,255,0.25);
+
+    --hh-cyan-glow:
+        0 0 35px rgba(37,217,255,0.22);
+
+    --hh-purple-glow:
+        0 0 35px rgba(113,60,255,0.25);
+
+    --hh-shadow:
+        0 25px 70px rgba(0,0,0,0.38);
+
+    font-family:
+        'Inter',
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+
+    color: var(--hh-text);
+
+    font-synthesis: none;
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+html {
+    background: var(--hh-bg);
+}
+
+
+body {
+
+    margin: 0;
+
+    min-width: 320px;
+
+    color: var(--hh-text);
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(37,217,255,0.11),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(113,60,255,0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 70% 90%,
+            rgba(193,60,255,0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020827 0%,
+            #06164d 48%,
+            #10083d 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+#root {
+
+    width: 100%;
+
+    margin: 0;
+
+    text-align: left;
+}
+
+
+button,
+input,
+select,
+textarea {
+
+    font-family: inherit;
+}
+
+
+button {
+
+    cursor: pointer;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    color: #ffffff;
+
+    margin-top: 0;
+
+    letter-spacing: -0.025em;
+}
+
+
+p {
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD BACKGROUND
+   ========================================================= */
+
+.hirehub-dashboard {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(37,217,255,0.10),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 88% 8%,
+            rgba(113,60,255,0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 72% 88%,
+            rgba(193,60,255,0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020827,
+            #06164d 48%,
+            #10083d
+        );
+
+    color: white;
+}
+
+
+/* =========================================================
+   FUTURISTIC GRID
+   ========================================================= */
+
+#hirehub-grid-bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(92,155,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(92,155,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 92%
+        );
+}
+
+
+/* CYAN LIGHT */
+
+#hirehub-grid-bg::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    left: -260px;
+
+    top: -300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,217,255,0.20),
+            rgba(37,105,255,0.06) 42%,
+            transparent 72%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        hhGlowMove 10s ease-in-out infinite alternate;
+}
+
+
+/* PURPLE LIGHT */
+
+#hirehub-grid-bg::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    right: -300px;
+
+    bottom: -350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(113,60,255,0.24),
+            rgba(193,60,255,0.08) 40%,
+            transparent 72%
+        );
+
+    filter: blur(35px);
+
+    animation:
+        hhGlowMove 12s ease-in-out infinite alternate-reverse;
+}
+
+
+@keyframes hhGlowMove {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate3d(30px,25px,0)
+            scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
+.hirehub-topbar {
+
+    position: relative;
+
+    z-index: 50;
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 12px 30px;
+
+    border-bottom:
+        1px solid
+        rgba(91,155,255,0.14);
+
+    background:
+        rgba(3,12,43,0.84);
+
+    backdrop-filter:
+        blur(24px);
+
+    -webkit-backdrop-filter:
+        blur(24px);
+
+    box-shadow:
+        0 10px 45px
+        rgba(0,0,0,0.32);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.hirehub-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: white;
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+
+.hirehub-logo-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff,
+            #1769ff 52%,
+            #713cff
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 25px
+        rgba(37,217,255,0.30),
+
+        0 0 45px
+        rgba(113,60,255,0.15),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.30);
+}
+
+
+.hirehub-brand-name {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #66ddff 48%,
+            #a878ff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.hirehub-brand-label {
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    color:
+        #60ddff;
+
+    background:
+        rgba(37,217,255,0.07);
+
+    border:
+        1px solid
+        rgba(37,217,255,0.20);
+}
+
+
+/* =========================================================
+   USER AREA
+   ========================================================= */
+
+.hirehub-user-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.hirehub-user-profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.hirehub-avatar {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff,
+            #1769ff 50%,
+            #713cff
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.20);
+
+    color: white;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 0 25px
+        rgba(37,105,255,0.28);
+}
+
+
+.hirehub-profile-name {
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.hirehub-logout-top {
+
+    border:
+        1px solid
+        rgba(91,155,255,0.20);
+
+    border-radius: 10px;
+
+    padding: 9px 15px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+
+.hirehub-logout-top:hover {
+
+    background:
+        rgba(37,105,255,0.14);
+
+    border-color:
+        rgba(37,217,255,0.42);
+
+    box-shadow:
+        0 0 25px
+        rgba(37,105,255,0.18);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.hirehub-layout {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    min-height:
+        calc(100vh - 76px);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.hirehub-sidebar {
+
+    width: 245px;
+
+    min-width: 245px;
+
+    min-height:
+        calc(100vh - 76px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 27px 15px 15px;
+
+    border-right:
+        1px solid
+        rgba(92,155,255,0.14);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,19,59,0.97),
+            rgba(3,10,37,0.97)
+        );
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        12px 0 50px
+        rgba(0,0,0,0.28);
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+   ========================================================= */
+
+.hirehub-menu-title {
+
+    margin:
+        0 8px 15px;
+
+    color:
+        #6680b5;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .15em;
+}
+
+
+.hirehub-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.hirehub-menu-item {
+
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 12px;
+
+    background:
+        transparent;
+
+    color:
+        #aab9d8;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    transition: .25s ease;
+}
+
+
+.hirehub-menu-icon {
+
+    width: 25px;
+
+    min-width: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+
+.hirehub-menu-item:hover {
+
+    color: white;
+
+    background:
+        rgba(37,105,255,0.08);
+
+    border-color:
+        rgba(37,169,255,0.13);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* ACTIVE MENU */
+
+.hirehub-menu-item.active {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23,105,255,0.32),
+            rgba(113,60,255,0.13)
+        );
+
+    border-color:
+        rgba(65,151,255,0.30);
+
+    box-shadow:
+        0 10px 30px
+        rgba(23,105,255,0.15);
+}
+
+
+.hirehub-menu-item.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 3px;
+
+    border-radius:
+        0 4px 4px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #25d9ff,
+            #1769ff,
+            #713cff
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(37,217,255,0.75);
+}
+
+
+.hirehub-menu-item.logout {
+
+    color:
+        #93a7cd;
+}
+
+
+.hirehub-menu-item.logout:hover {
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(113,60,255,0.08);
+}
+
+
+.hirehub-sidebar-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        18px 0 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(96,160,255,0.16),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   PROMO CARD
+   ========================================================= */
+
+.hirehub-promo,
+#recruiter-promo {
+
+    position: relative;
+
+    min-height: 170px;
+
+    margin-top: auto;
+
+    overflow: hidden;
+
+    border-radius: 19px;
+
+    border:
+        1px solid
+        rgba(84,157,255,0.30);
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(193,60,255,0.38),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(37,217,255,0.28),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #0c3d9b,
+            #10135b 55%,
+            #3b1173
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.40),
+
+        0 0 30px
+        rgba(37,105,255,0.10);
+}
+
+
+.hirehub-promo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+
+    height: 130px;
+
+    right: -45px;
+
+    top: -50px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(113,60,255,0.55),
+            transparent 70%
+        );
+
+    filter: blur(5px);
+}
+
+
+.hirehub-promo::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 50px;
+
+    left: -40px;
+
+    bottom: -15px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(37,217,255,0.20);
+
+    transform:
+        rotate(-14deg);
+}
+
+
+/* =========================================================
+   PROMO IMAGE
+   ========================================================= */
+
+#recruiter-promo-image {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 18px;
+
+    transition:
+        transform .35s ease;
+}
+
+
+#recruiter-promo:hover
+#recruiter-promo-image {
+
+    transform:
+        scale(1.035);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.hirehub-content {
+
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 38px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   3D GLOW WAVES
+   ========================================================= */
+
+.hirehub-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 720px;
+
+    height: 260px;
+
+    right: -150px;
+
+    top: 35px;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,217,255,0.18),
+            rgba(113,60,255,0.28),
+            rgba(193,60,255,0.12)
+        );
+
+    filter:
+        blur(25px);
+
+    transform:
+        rotate(-8deg);
+
+    opacity: .85;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.hirehub-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 800px;
+
+    height: 220px;
+
+    right: 70px;
+
+    top: 300px;
+
+    border-radius:
+        50%;
+
+    border:
+        35px solid
+        rgba(113,60,255,0.12);
+
+    filter:
+        blur(8px);
+
+    transform:
+        rotate(7deg);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.hirehub-page-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+
+.hirehub-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color:
+        #40ddff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .17em;
+}
+
+
+.hirehub-page-header h1 {
+
+    margin:
+        0 0 8px;
+
+    font-size:
+        38px;
+
+    font-weight:
+        700;
+
+    color:
+        #ffffff;
+
+    line-height:
+        1.1;
+
+    text-shadow:
+        0 0 35px
+        rgba(37,105,255,0.15);
+}
+
+
+.hirehub-page-header p {
+
+    margin: 0;
+
+    color:
+        #9aacce;
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.hirehub-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+#recruiter-stats {
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+}
+
+
+.hirehub-stats-secondary {
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+}
+
+
+.hirehub-stat-card {
+
+    position: relative;
+
+    min-height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(93,158,255,0.20);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.085),
+            rgba(255,255,255,0.028)
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.30),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.05);
+
+    backdrop-filter:
+        blur(18px);
+
+    transition:
+        .28s ease;
+}
+
+
+.hirehub-stat-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    right: -70px;
+
+    bottom: -70px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,217,255,0.12),
+            transparent 70%
+        );
+}
+
+
+.hirehub-stat-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(37,169,255,0.42);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.38),
+
+        0 0 30px
+        rgba(23,105,255,0.10);
+}
+
+
+.hirehub-stat-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 52px;
+
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 21px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+}
+
+
+.hirehub-stat-icon.blue {
+
+    background:
+        rgba(23,105,255,0.17);
+
+    color:
+        #56baff;
+
+    box-shadow:
+        0 0 25px
+        rgba(23,105,255,0.13);
+}
+
+
+.hirehub-stat-icon.cyan {
+
+    background:
+        rgba(37,217,255,0.14);
+
+    color:
+        #55e7ff;
+}
+
+
+.hirehub-stat-icon.purple {
+
+    background:
+        rgba(113,60,255,0.17);
+
+    color:
+        #ad8cff;
+}
+
+
+.hirehub-stat-icon.green {
+
+    background:
+        rgba(39,216,163,0.13);
+
+    color:
+        #5ce8bb;
+}
+
+
+.hirehub-stat-icon.orange {
+
+    background:
+        rgba(255,178,65,0.13);
+
+    color:
+        #ffc96f;
+}
+
+
+.hirehub-stat-icon.red {
+
+    background:
+        rgba(193,60,255,0.16);
+
+    color:
+        #d38bff;
+}
+
+
+.hirehub-stat-info {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.hirehub-stat-info span {
+
+    color:
+        #a6b8d8;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+}
+
+
+.hirehub-stat-info strong {
+
+    color:
+        #ffffff;
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    font-size:
+        28px;
+
+    line-height:
+        1;
+}
+
+
+.hirehub-stat-info small {
+
+    color:
+        #7186ae;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD GRID
+   ========================================================= */
+
+.hirehub-dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,1.15fr)
+        minmax(0,.85fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   GLASS SECTION
+   ========================================================= */
+
+.hirehub-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 23px;
+
+    border:
+        1px solid
+        rgba(91,157,255,0.18);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.32),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.045);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    margin-bottom:
+        20px;
+}
+
+
+.hirehub-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 20px;
+
+    right: 20px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #25d9ff,
+            #1769ff,
+            #713cff,
+            transparent
+        );
+
+    opacity:
+        .65;
+}
+
+
+.hirehub-section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.hirehub-section-label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        #4bdfff;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .15em;
+}
+
+
+.hirehub-section-header h2 {
+
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        19px;
+
+    font-weight:
+        700;
+}
+
+
+.hirehub-view-all {
+
+    border:
+        1px solid
+        rgba(50,148,255,0.35);
+
+    border-radius:
+        9px;
+
+    padding:
+        8px 13px;
+
+    background:
+        rgba(23,105,255,0.09);
+
+    color:
+        #63dfff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    transition:
+        .2s ease;
+}
+
+
+.hirehub-view-all:hover {
+
+    background:
+        rgba(113,60,255,0.17);
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 0 22px
+        rgba(113,60,255,0.15);
+}
+
+
+/* =========================================================
+   ACTION CARDS
+   ========================================================= */
+
+.hirehub-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:
+        11px;
+}
+
+
+.hirehub-action {
+
+    position: relative;
+
+    min-height:
+        75px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        11px;
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        rgba(94,158,255,0.14);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    color:
+        #ffffff;
+
+    text-align:
+        left;
+
+    transition:
+        .25s ease;
+}
+
+
+.hirehub-action:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(37,169,255,0.34);
+
+    background:
+        rgba(37,105,255,0.07);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.30);
+}
+
+
+.hirehub-action-icon {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    min-width:
+        38px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23,105,255,0.20),
+            rgba(113,60,255,0.18)
+        );
+
+    border:
+        1px solid
+        rgba(75,151,255,0.22);
+
+    font-size:
+        16px;
+}
+
+
+.hirehub-action-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    min-width:
+        0;
+}
+
+
+.hirehub-action-content strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+}
+
+
+.hirehub-action-content small {
+
+    margin-top:
+        3px;
+
+    color:
+        #7186ad;
+
+    font-size:
+        8px;
+}
+
+
+.hirehub-action-arrow {
+
+    margin-left:
+        auto;
+
+    color:
+        #6681b4;
+
+    font-size:
+        17px;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+#recent-applications {
+
+    width:
+        100%;
+
+    overflow:
+        hidden;
+}
+
+
+#applications-table-wrapper {
+
+    width:
+        100%;
+
+    overflow-x:
+        auto;
+
+    overflow-y:
+        hidden;
+
+    border-radius:
+        12px;
+}
+
+
+#applications-table {
+
+    width:
+        100%;
+
+    min-width:
+        760px;
+
+    border-collapse:
+        separate;
+
+    border-spacing:
+        0;
+
+    color:
+        #ffffff;
+}
+
+
+#applications-table thead th {
+
+    padding:
+        13px 12px;
+
+    color:
+        #91b2e5;
+
+    background:
+        rgba(23,105,255,0.055);
+
+    border-bottom:
+        1px solid
+        rgba(94,157,255,0.13);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    text-align:
+        left;
+
+    white-space:
+        nowrap;
+}
+
+
+#applications-table tbody td {
+
+    padding:
+        14px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(94,157,255,0.075);
+
+    color:
+        #d6e1f6;
+
+    font-size:
+        10px;
+
+    vertical-align:
+        middle;
+
+    white-space:
+        nowrap;
+}
+
+
+#applications-table tbody tr {
+
+    transition:
+        .2s ease;
+}
+
+
+#applications-table tbody tr:hover {
+
+    background:
+        rgba(23,105,255,0.065);
+}
+
+
+#applications-table tbody tr:last-child td {
+
+    border-bottom:
+        none;
+}
+
+
+/* =========================================================
+   CANDIDATE CELL
+   ========================================================= */
+
+.candidate-cell {
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    gap:
+        10px !important;
+
+    min-width:
+        170px;
+
+    white-space:
+        normal !important;
+}
+
+
+.candidate-avatar {
+
+    width:
+        36px !important;
+
+    height:
+        36px !important;
+
+    min-width:
+        36px !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    border-radius:
+        50% !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff,
+            #1769ff,
+            #713cff
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    font-weight:
+        800 !important;
+
+    box-shadow:
+        0 0 20px
+        rgba(37,105,255,0.20);
+}
+
+
+.candidate-cell strong {
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        10px;
+}
+
+
+.candidate-cell small {
+
+    color:
+        #7186ae !important;
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+   JOB INFORMATION
+   ========================================================= */
+
+#applications-table .job-info {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+}
+
+
+#applications-table .job-info strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        10px;
+}
+
+
+#applications-table .job-info small {
+
+    color:
+        #7186ae;
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.recruiter-status {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        75px;
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    white-space:
+        nowrap;
+}
+
+
+.recruiter-status.applied {
+
+    color:
+        #65c9ff;
+
+    background:
+        rgba(23,105,255,0.11);
+
+    border:
+        1px solid
+        rgba(37,139,255,0.25);
+}
+
+
+.recruiter-status.shortlisted {
+
+    color:
+        #c19cff;
+
+    background:
+        rgba(113,60,255,0.13);
+
+    border:
+        1px solid
+        rgba(113,60,255,0.28);
+}
+
+
+.recruiter-status.selected {
+
+    color:
+        #5de5b1;
+
+    background:
+        rgba(35,211,143,0.10);
+
+    border:
+        1px solid
+        rgba(35,211,143,0.22);
+}
+
+
+.recruiter-status.rejected {
+
+    color:
+        #e38cff;
+
+    background:
+        rgba(193,60,255,0.12);
+
+    border:
+        1px solid
+        rgba(193,60,255,0.25);
+}
+
+
+.recruiter-status.interview {
+
+    color:
+        #5ee6ff;
+
+    background:
+        rgba(37,217,255,0.10);
+
+    border:
+        1px solid
+        rgba(37,217,255,0.25);
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+   ========================================================= */
+
+.recruiter-view-btn,
+.hirehub-view-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        65px;
+
+    padding:
+        7px 11px;
+
+    border:
+        1px solid
+        rgba(55,151,255,0.35);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(23,105,255,0.10);
+
+    color:
+        #68dfff;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+    transition:
+        .2s ease;
+}
+
+
+.recruiter-view-btn:hover,
+.hirehub-view-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769ff,
+            #713cff
+        );
+
+    color:
+        white;
+
+    border-color:
+        transparent;
+
+    box-shadow:
+        0 0 25px
+        rgba(37,105,255,0.30);
+}
+
+
+/* =========================================================
+   MANAGEMENT CARDS
+   ========================================================= */
+
+.hirehub-management-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:
+        12px;
+}
+
+
+.hirehub-management-card {
+
+    min-height:
+        100px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(94,158,255,0.15);
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.065),
+            rgba(113,60,255,0.035)
+        );
+
+    color:
+        white;
+
+    text-align:
+        left;
+
+    transition:
+        .25s ease;
+}
+
+
+.hirehub-management-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(37,169,255,0.35);
+
+    background:
+        rgba(37,105,255,0.07);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.30);
+}
+
+
+.hirehub-management-icon {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23,105,255,0.20),
+            rgba(113,60,255,0.18)
+        );
+
+    border:
+        1px solid
+        rgba(82,151,255,0.22);
+}
+
+
+/* =========================================================
+   JOB CARDS
+   ========================================================= */
+
+.hirehub-job-card {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        17px;
+
+    border:
+        1px solid
+        rgba(94,158,255,0.14);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    transition:
+        .25s ease;
+}
+
+
+.hirehub-job-card:hover {
+
+    border-color:
+        rgba(37,169,255,0.32);
+
+    background:
+        rgba(23,105,255,0.06);
+
+    transform:
+        translateY(-3px);
+}
+
+
+.hirehub-company-logo {
+
+    width:
+        47px;
+
+    height:
+        47px;
+
+    min-width:
+        47px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff,
+            #1769ff,
+            #713cff
+        );
+
+    color:
+        white;
+
+    box-shadow:
+        0 0 25px
+        rgba(37,105,255,0.20);
+}
+
+
+.hirehub-match-badge {
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        20px;
+
+    color:
+        #5de5b1;
+
+    background:
+        rgba(43,218,157,0.09);
+
+    border:
+        1px solid
+        rgba(43,218,157,0.20);
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.hirehub-primary-btn,
+.btn-primary {
+
+    border:
+        none !important;
+
+    border-radius:
+        10px !important;
+
+    padding:
+        10px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff,
+            #1769ff 50%,
+            #713cff
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 12px 30px
+        rgba(23,105,255,0.25);
+}
+
+
+.hirehub-primary-btn:hover,
+.btn-primary:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(113,60,255,0.28);
+}
+
+
+/* =========================================================
+   BOOTSTRAP / OLD PAGES
+   ========================================================= */
+
+.container-fluid.min-vh-100,
+.container.min-vh-100 {
+
+    background:
+        transparent !important;
+}
+
+
+.bg-light {
+
+    background:
+        transparent !important;
+}
+
+
+.bg-white {
+
+    background:
+        rgba(255,255,255,0.04) !important;
+}
+
+
+.text-muted {
+
+    color:
+        #8499c3 !important;
+}
+
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(95,160,255,0.17) !important;
+
+    border-radius:
+        18px !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.30) !important;
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+.card-body {
+
+    color:
+        #dce7fa;
+}
+
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.form-control,
+.form-select,
+textarea {
+
+    min-height:
+        44px;
+
+    border:
+        1px solid
+        rgba(95,160,255,0.18) !important;
+
+    border-radius:
+        10px !important;
+
+    background:
+        rgba(255,255,255,0.045) !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.form-control::placeholder {
+
+    color:
+        #647ba7 !important;
+}
+
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+
+    border-color:
+        #35cfff !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37,217,255,0.10) !important;
+}
+
+
+.form-label {
+
+    color:
+        #c9d7ef !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table {
+
+    color:
+        #dce7f8 !important;
+}
+
+
+.table th {
+
+    color:
+        #8fbfff !important;
+
+    background:
+        rgba(23,105,255,0.07) !important;
+
+    border-color:
+        rgba(94,158,255,0.10) !important;
+}
+
+
+.table td {
+
+    color:
+        #cedaf0 !important;
+
+    border-color:
+        rgba(94,158,255,0.075) !important;
+}
+
+
+.table-hover tbody tr:hover {
+
+    background:
+        rgba(23,105,255,0.06) !important;
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.alert {
+
+    border-radius:
+        12px !important;
+
+    background:
+        rgba(255,255,255,0.045) !important;
+
+    color:
+        #dce7f8 !important;
+
+    border:
+        1px solid
+        rgba(95,160,255,0.15) !important;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+
+    color:
+        #62ddff !important;
+
+    text-decoration:
+        none;
+}
+
+
+a:hover {
+
+    color:
+        #a57cff !important;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+    outline:
+        2px solid
+        #35dfff !important;
+
+    outline-offset:
+        2px;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+
+    background:
+        rgba(37,105,255,0.40);
+
+    color:
+        white;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        7px;
+
+    height:
+        7px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #030a28;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            #25d9ff,
+            #1769ff,
+            #713cff
+        );
+
+    border-radius:
+        20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #63e8ff,
+            #4c91ff,
+            #a476ff
+        );
+}
+
+
+/* =========================================================
+   RECRUITER ERROR
+   ========================================================= */
+
+#recruiter-error {
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(193,60,255,0.08) !important;
+
+    border:
+        1px solid
+        rgba(193,60,255,0.25) !important;
+
+    color:
+        #d9b4ff !important;
+}
+
+
+/* =========================================================
+   ADMIN / CANDIDATE / RECRUITER
+   ========================================================= */
+
+.admin-page,
+.candidate-page,
+.recruiter-page {
+
+    position:
+        relative;
+
+    min-height:
+        100vh;
+
+    color:
+        white;
+
+    background:
+        transparent;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
+
+.hirehub-state-page {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #030a28,
+            #06164d,
+            #10083d
+        );
+
+    color:
+        white;
+}
+
+
+.hirehub-loading-card,
+.hirehub-error-card {
+
+    width:
+        min(430px,90%);
+
+    padding:
+        40px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid
+        rgba(95,160,255,0.20);
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.40);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hirehub-content {
+
+        padding:
+            28px;
+    }
+
+    .hirehub-stats {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    #recruiter-stats {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .hirehub-dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .hirehub-sidebar {
+
+        width:
+            205px;
+
+        min-width:
+            205px;
+    }
+
+    .hirehub-actions {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .hirehub-management-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .hirehub-page-header h1 {
+
+        font-size:
+            30px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .hirehub-topbar {
+
+        padding:
+            10px 15px;
+    }
+
+    .hirehub-brand {
+
+        font-size:
+            19px;
+    }
+
+    .hirehub-brand-label {
+
+        display:
+            none;
+    }
+
+    .hirehub-layout {
+
+        display:
+            block;
+    }
+
+    .hirehub-sidebar {
+
+        width:
+            100%;
+
+        min-width:
+            100%;
+
+        min-height:
+            auto;
+
+        padding:
+            10px;
+    }
+
+    .hirehub-menu-title {
+
+        display:
+            none;
+    }
+
+    .hirehub-menu {
+
+        flex-direction:
+            row;
+
+        flex-wrap:
+            wrap;
+    }
+
+    .hirehub-menu-item {
+
+        width:
+            auto;
+
+        flex:
+            1 1 45%;
+    }
+
+    .hirehub-sidebar-divider,
+    .hirehub-promo {
+
+        display:
+            none;
+    }
+
+    .hirehub-content {
+
+        padding:
+            20px 14px;
+    }
+
+    .hirehub-stats,
+    #recruiter-stats,
+    .hirehub-stats-secondary {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hirehub-actions,
+    .hirehub-management-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hirehub-page-header {
+
+        flex-direction:
+            column;
+    }
+
+    .hirehub-page-header h1 {
+
+        font-size:
+            27px;
+    }
+
+    #applications-table {
+
+        min-width:
+            760px;
+    }
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+    .hirehub-grid-bg,
+    .hirehub-topbar,
+    .hirehub-sidebar {
+
+        display:
+            none !important;
+    }
+
+    .hirehub-content {
+
+        padding:
+            0 !important;
+    }
+}
+/* =========================================================
+   GLOBAL DASHBOARD FINAL FIX
+   Applies to Admin + Candidate + Recruiter
+   ========================================================= */
+
+
+/* =========================================================
+   DASHBOARD HEIGHT / OVERFLOW
+   ========================================================= */
+
+.hirehub-dashboard,
+.admin-page,
+.candidate-page,
+.recruiter-page {
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR PROMO CONTENT FIX
+   ========================================================= */
+
+.hirehub-promo {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 18px;
+
+    min-height: 170px;
+
+    overflow: hidden;
+}
+
+
+/* If promo has text content */
+
+.hirehub-promo-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    width: 100%;
+
+    min-height: 130px;
+
+    padding: 5px;
+}
+
+
+.hirehub-promo-content strong {
+
+    display: block;
+
+    max-width: 150px;
+
+    color: #ffffff;
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    text-shadow:
+        0 2px 15px
+        rgba(0,0,0,0.35);
+}
+
+
+.hirehub-promo-content span {
+
+    display: block;
+
+    max-width: 150px;
+
+    color:
+        rgba(235,245,255,0.85);
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   PROMO IMAGE
+   ========================================================= */
+
+#recruiter-promo {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+#recruiter-promo-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 18px;
+}
+
+
+/* Dark transparent layer over image */
+
+#recruiter-promo::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3,10,40,0.05) 20%,
+            rgba(3,10,40,0.55) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Text stays above image */
+
+#recruiter-promo .hirehub-promo-content {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   REFRESH DASHBOARD BUTTON
+   ========================================================= */
+
+.hirehub-refresh-area {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    margin: 18px 0 25px;
+
+    padding: 0;
+}
+
+
+.hirehub-refresh-area button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 38px;
+
+    padding: 9px 17px;
+
+    border:
+        1px solid
+        rgba(64,170,255,0.30);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23,105,255,0.18),
+            rgba(113,60,255,0.18)
+        );
+
+    color:
+        #72ddff;
+
+    font-family:
+        'Inter',
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px
+        rgba(23,105,255,0.12);
+
+    transition:
+        all .25s ease;
+}
+
+
+.hirehub-refresh-area button:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(37,217,255,0.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23,105,255,0.30),
+            rgba(113,60,255,0.28)
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 12px 30px
+        rgba(23,105,255,0.20);
+}
+
+
+/* =========================================================
+   BOOTSTRAP REFRESH BUTTON FALLBACK
+   ========================================================= */
+
+.hirehub-refresh-area .btn {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769ff,
+            #713cff
+        ) !important;
+
+    border:
+        1px solid
+        rgba(87,190,255,0.40) !important;
+
+    color:
+        #ffffff !important;
+
+    border-radius:
+        10px !important;
+
+    padding:
+        9px 17px !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        700 !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(23,105,255,0.20) !important;
+}
+
+
+/* =========================================================
+   COMMON DASHBOARD SECTIONS
+   ========================================================= */
+
+.hirehub-content > * {
+
+    max-width: 100%;
+}
+
+
+/* Prevent horizontal overflow */
+
+.hirehub-content,
+.hirehub-section,
+.hirehub-dashboard-grid,
+.hirehub-stats {
+
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   ADMIN QUICK ACTIONS
+   ========================================================= */
+
+.hirehub-management-grid {
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+.hirehub-management-card {
+
+    overflow: hidden;
+
+    word-break: normal;
+}
+
+
+/* =========================================================
+   ADMIN / CANDIDATE / RECRUITER BUTTONS
+   ========================================================= */
+
+button.btn,
+a.btn {
+
+    font-family:
+        'Inter',
+        sans-serif;
+
+    box-shadow:
+        none;
+}
+
+
+/* =========================================================
+   REMOVE DEFAULT BOOTSTRAP NAVBAR COLORS
+   ========================================================= */
+
+.navbar {
+
+    background:
+        rgba(3,12,43,0.88) !important;
+
+    border-bottom:
+        1px solid
+        rgba(95,160,255,0.14);
+
+    backdrop-filter:
+        blur(20px);
+}
+
+
+.navbar-brand {
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   GLOBAL PAGE BOTTOM SPACE
+   ========================================================= */
+
+.hirehub-content {
+
+    padding-bottom:
+        45px;
+}
+
+
+/* =========================================================
+   MOBILE PROMO
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .hirehub-promo {
+
+        min-height:
+            150px;
+    }
+
+    .hirehub-promo-content {
+
+        min-height:
+            115px;
+    }
+
+    .hirehub-promo-content strong {
+
+        font-size:
+            17px;
+    }
+
+    .hirehub-promo-content span {
+
+        font-size:
+            9px;
+    }
+}/* =========================================================
+   HIREHUB COMMON DATE CARD
+   Candidate + Recruiter + Admin
+   ========================================================= */
+
+.hirehub-date-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    min-width: 155px;
+
+    padding: 8px 12px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    border:
+        1px solid
+        rgba(91,157,255,0.14);
+
+    color: #ffffff;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+/* Calendar icon */
+
+.hirehub-date-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    min-width: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,217,255,0.16),
+            rgba(113,60,255,0.18)
+        );
+
+    border:
+        1px solid
+        rgba(75,155,255,0.22);
+
+    font-size: 15px;
+
+    box-shadow:
+        0 0 15px
+        rgba(37,105,255,0.08);
+}
+
+
+/* Text wrapper */
+
+.hirehub-date-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    line-height: 1.2;
+}
+
+
+/* Today */
+
+.hirehub-date-content small {
+
+    display: block;
+
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.02em;
+}
+
+
+/* Date */
+
+.hirehub-date-content strong {
+
+    display: block;
+
+    margin: 0;
+
+    color:
+        #8fa8d4;
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    white-space:
+        nowrap;
+}
+
+
+/* Hover */
+
+.hirehub-date-card:hover {
+
+    border-color:
+        rgba(37,217,255,0.32);
+
+    background:
+        rgba(37,105,255,0.06);
+
+    box-shadow:
+        0 0 25px
+        rgba(37,105,255,0.10);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   INDIVIDUAL DASHBOARD POSITIONING
+   ========================================================= */
+
+#recruiter-date {
+
+    margin-left: auto;
+}
+
+
+#candidate-date {
+
+    margin-left: auto;
+}
+
+
+#admin-date {
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hirehub-date-card {
+
+        min-width: auto;
+
+        padding:
+            6px 8px;
+    }
+
+    .hirehub-date-content strong {
+
+        font-size:
+            9px;
+    }
+
+    .hirehub-date-content small {
+
+        font-size:
+            9px;
+    }
+
+    .hirehub-date-icon {
+
+        width:
+            30px;
+
+        height:
+            30px;
+
+        min-width:
+            30px;
+
+        font-size:
+            13px;
+    }
+}/* =========================================================
+   HIREHUB - COMMON TABLE DESIGN
+   Applies to ALL tables
+   Candidate + Recruiter + Admin
+   ========================================================= */
+
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.hirehub-table-wrapper,
+.table-responsive,
+table {
+
+    max-width: 100%;
+}
+
+
+/* Wrapper used around tables */
+
+.hirehub-table-wrapper,
+.table-responsive {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    border-radius: 10px;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   ALL HIREHUB TABLES
+   ========================================================= */
+
+.hirehub-table,
+table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    color: #dbe7ff;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(80,145,255,0.18);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.hirehub-table thead,
+table thead {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,29,80,0.98),
+            rgba(16,28,88,0.98)
+        );
+}
+
+
+/* Header cells */
+
+.hirehub-table thead th,
+table thead th {
+
+    padding:
+        12px 10px;
+
+    height:
+        38px;
+
+    color:
+        #78aaff !important;
+
+    background:
+        rgba(8,24,70,0.95) !important;
+
+    border-bottom:
+        1px solid
+        rgba(66,125,235,0.28);
+
+    border-right:
+        1px solid
+        rgba(66,125,235,0.14);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    text-align:
+        left;
+
+    white-space:
+        nowrap;
+
+    vertical-align:
+        middle;
+}
+
+
+.hirehub-table thead th:last-child,
+table thead th:last-child {
+
+    border-right:
+        none;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.hirehub-table tbody,
+table tbody {
+
+    background:
+        rgba(255,255,255,0.035);
+}
+
+
+/* Body cells */
+
+.hirehub-table tbody td,
+table tbody td {
+
+    padding:
+        11px 10px;
+
+    height:
+        38px;
+
+    color:
+        #d6e2f8 !important;
+
+    background:
+        rgba(255,255,255,0.035) !important;
+
+    border-bottom:
+        1px solid
+        rgba(83,140,225,0.14);
+
+    border-right:
+        1px solid
+        rgba(83,140,225,0.10);
+
+    font-size:
+        12px;
+
+    vertical-align:
+        middle;
+
+    white-space:
+        nowrap;
+}
+
+
+.hirehub-table tbody td:last-child,
+table tbody td:last-child {
+
+    border-right:
+        none;
+}
+
+
+/* Last row */
+
+.hirehub-table tbody tr:last-child td,
+table tbody tr:last-child td {
+
+    border-bottom:
+        none;
+}
+
+
+/* =========================================================
+   TABLE ROW HOVER
+   ========================================================= */
+
+.hirehub-table tbody tr,
+table tbody tr {
+
+    transition:
+        background .18s ease;
+}
+
+
+.hirehub-table tbody tr:hover td,
+table tbody tr:hover td {
+
+    background:
+        rgba(37,105,255,0.075) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   FIRST COLUMN / NUMBER
+   ========================================================= */
+
+.hirehub-table th:first-child,
+.hirehub-table td:first-child,
+table th:first-child,
+table td:first-child {
+
+    text-align:
+        center;
+
+    color:
+        #8eacdf !important;
+}
+
+
+/* =========================================================
+   ID / SECONDARY TEXT
+   ========================================================= */
+
+.hirehub-table .table-id,
+table .table-id {
+
+    color:
+        #b5c8ea !important;
+
+    font-family:
+        'Inter',
+        sans-serif;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   JOB / CANDIDATE / COMPANY TEXT
+   ========================================================= */
+
+.hirehub-table strong,
+table strong {
+
+    color:
+        #eaf2ff;
+
+    font-weight:
+        700;
+}
+
+
+.hirehub-table small,
+table small {
+
+    color:
+        #8097c2;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.hirehub-status {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        72px;
+
+    padding:
+        4px 9px;
+
+    border-radius:
+        5px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.2;
+
+    text-transform:
+        lowercase;
+
+    white-space:
+        nowrap;
+}
+
+
+/* Applied */
+
+.hirehub-status.applied {
+
+    color:
+        #ffffff;
+
+    background:
+        #1479ff;
+
+    border:
+        1px solid
+        rgba(76,169,255,0.45);
+
+    box-shadow:
+        0 0 10px
+        rgba(20,121,255,0.12);
+}
+
+
+/* Shortlisted */
+
+.hirehub-status.shortlisted {
+
+    color:
+        #151515;
+
+    background:
+        #ffc400;
+
+    border:
+        1px solid
+        #ffd84d;
+}
+
+
+/* Interview */
+
+.hirehub-status.interview {
+
+    color:
+        #06233b;
+
+    background:
+        #19c9e8;
+
+    border:
+        1px solid
+        #55def4;
+}
+
+
+/* Selected */
+
+.hirehub-status.selected {
+
+    color:
+        #062d22;
+
+    background:
+        #42dfb0;
+
+    border:
+        1px solid
+        #69edc7;
+}
+
+
+/* Rejected */
+
+.hirehub-status.rejected {
+
+    color:
+        #ffffff;
+
+    background:
+        #d03cff;
+
+    border:
+        1px solid
+        #e071ff;
+}
+
+
+/* Pending */
+
+.hirehub-status.pending {
+
+    color:
+        #151515;
+
+    background:
+        #ffc400;
+
+    border:
+        1px solid
+        #ffd84d;
+}
+
+
+/* =========================================================
+   SUPPORT EXISTING STATUS CLASSES
+   ========================================================= */
+
+.status-applied,
+.badge-applied {
+
+    color:
+        #ffffff !important;
+
+    background:
+        #1479ff !important;
+
+    border-color:
+        #3e9aff !important;
+}
+
+
+.status-shortlisted,
+.badge-shortlisted {
+
+    color:
+        #151515 !important;
+
+    background:
+        #ffc400 !important;
+
+    border-color:
+        #ffd84d !important;
+}
+
+
+.status-interview,
+.badge-interview {
+
+    color:
+        #06233b !important;
+
+    background:
+        #19c9e8 !important;
+
+    border-color:
+        #55def4 !important;
+}
+
+
+.status-selected,
+.badge-selected {
+
+    color:
+        #062d22 !important;
+
+    background:
+        #42dfb0 !important;
+
+    border-color:
+        #69edc7 !important;
+}
+
+
+.status-rejected,
+.badge-rejected {
+
+    color:
+        #ffffff !important;
+
+    background:
+        #d03cff !important;
+
+    border-color:
+        #e071ff !important;
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+   ========================================================= */
+
+.hirehub-table-action {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        5px 10px;
+
+    border:
+        1px solid
+        rgba(65,145,255,0.35);
+
+    border-radius:
+        6px;
+
+    background:
+        rgba(23,105,255,0.10);
+
+    color:
+        #68dfff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+    transition:
+        all .2s ease;
+}
+
+
+.hirehub-table-action:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769ff,
+            #713cff
+        );
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        transparent;
+
+    box-shadow:
+        0 0 18px
+        rgba(37,105,255,0.22);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   BOOTSTRAP BADGE COMPATIBILITY
+   ========================================================= */
+
+table .badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        65px;
+
+    padding:
+        4px 8px;
+
+    border-radius:
+        5px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.hirehub-table-section {
+
+    width:
+        100%;
+
+    padding:
+        20px;
+
+    border:
+        1px solid
+        rgba(85,150,255,0.16);
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.065),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.30);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   TABLE TITLE
+   ========================================================= */
+
+.hirehub-table-title {
+
+    width:
+        100%;
+
+    min-height:
+        68px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        20px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(87,151,255,0.20);
+
+    border-radius:
+        16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.07),
+            rgba(113,60,255,0.07)
+        );
+
+    color:
+        #ffffff;
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    font-size:
+        25px;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.20);
+}
+
+
+/* =========================================================
+   TABLE BUTTON AREA
+   ========================================================= */
+
+.hirehub-table-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        20px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+/* Refresh */
+
+.hirehub-refresh-button {
+
+    border:
+        none;
+
+    border-radius:
+        8px;
+
+    padding:
+        9px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff,
+            #1769ff 50%,
+            #713cff
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 8px 22px
+        rgba(23,105,255,0.22);
+
+    transition:
+        .2s ease;
+}
+
+
+.hirehub-refresh-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(113,60,255,0.30);
+}
+
+
+/* Back */
+
+.hirehub-back-button {
+
+    border:
+        1px solid
+        rgba(110,160,220,0.22);
+
+    border-radius:
+        8px;
+
+    padding:
+        8px 14px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color:
+        #d9e5fa;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    transition:
+        .2s ease;
+}
+
+
+.hirehub-back-button:hover {
+
+    background:
+        rgba(255,255,255,0.13);
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .hirehub-table-section {
+
+        padding:
+            14px;
+    }
+
+    .hirehub-table-title {
+
+        font-size:
+            20px;
+
+        min-height:
+            58px;
+    }
+
+    .hirehub-table,
+    table {
+
+        min-width:
+            850px;
+    }
+
+    .hirehub-table-wrapper,
+    .table-responsive {
+
+        overflow-x:
+            auto;
+    }
+}
+/* =========================================================
+   HIREHUB RESUME - CHOOSE FILE BUTTON
+   Blue + Light Blue + Purple Theme
+   ========================================================= */
+
+
+/* File input */
+
+#resumeInput {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border: 1px solid
+        rgba(91, 157, 255, 0.28);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    color:
+        #dce9ff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* =========================================================
+   CHOOSE FILE BUTTON
+   ========================================================= */
+
+#resumeInput::file-selector-button {
+
+    height: 48px;
+
+    margin-right: 14px;
+
+    padding:
+        0 18px;
+
+    border: none;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d9ff 0%,
+            #1769ff 50%,
+            #713cff 100%
+        );
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        all .25s ease;
+}
+
+
+/* Hover */
+
+#resumeInput:hover {
+
+    border-color:
+        rgba(37, 217, 255, 0.55);
+
+    background:
+        rgba(37, 105, 255, 0.09);
+
+    box-shadow:
+        0 0 20px
+        rgba(37, 105, 255, 0.12);
+}
+
+
+#resumeInput:hover::file-selector-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #4be4ff 0%,
+            #287dff 50%,
+            #8a5cff 100%
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(37, 217, 255, 0.25);
+}
+
+
+/* Focus */
+
+#resumeInput:focus {
+
+    border-color:
+        #25d9ff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 217, 255, 0.10);
+}
+
+
+/* Disabled */
+
+#resumeInput:disabled {
+
+    opacity:
+        0.55;
+
+    cursor:
+        not-allowed;
+}
+
+
+#resumeInput:disabled::file-selector-button {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        0.65;
+}

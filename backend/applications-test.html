@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HireHub Applications Test</title>
+</head>
+
+<body>
+
+    <h1>HireHub Applications API Test</h1>
+
+    <h2>Submit Application</h2>
+
+    <input
+        type="text"
+        id="userId"
+        placeholder="User ID"
+    >
+
+    <br><br>
+
+    <input
+        type="text"
+        id="jobId"
+        placeholder="Job ID"
+    >
+
+    <br><br>
+
+    <button onclick="submitApplication()">
+        Apply for Job
+    </button>
+
+    <pre id="submitResult"></pre>
+
+    <hr>
+
+    <h2>All Applications</h2>
+
+    <button onclick="getApplications()">
+        Load Applications
+    </button>
+
+    <pre id="applicationsResult"></pre>
+
+
+    <script>
+
+        async function submitApplication() {
+
+            const userId =
+                document.getElementById("userId").value;
+
+            const jobId =
+                document.getElementById("jobId").value;
+
+
+            try {
+
+                const response = await fetch(
+                    "api/applications.php",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            userId: userId,
+                            jobId: jobId
+                        })
+                    }
+                );
+
+
+                const result = await response.json();
+
+                document.getElementById("submitResult")
+                    .textContent =
+                    JSON.stringify(result, null, 2);
+
+            } catch (error) {
+
+                document.getElementById("submitResult")
+                    .textContent =
+                    "Error: " + error.message;
+            }
+        }
+
+
+        async function getApplications() {
+
+            try {
+
+                const response = await fetch(
+                    "api/applications.php"
+                );
+
+                const result = await response.json();
+
+                document.getElementById("applicationsResult")
+                    .textContent =
+                    JSON.stringify(result, null, 2);
+
+            } catch (error) {
+
+                document.getElementById("applicationsResult")
+                    .textContent =
+                    "Error: " + error.message;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

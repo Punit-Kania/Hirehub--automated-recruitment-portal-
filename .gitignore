@@ -1,0 +1,14 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies / generated files
+node_modules/
+frontend/hirehub-app/dist/
+
+# Local uploads and runtime files
+backend/uploads/resumes/*
+!backend/uploads/resumes/.gitkeep
+uploads/resumes/*
+!uploads/resumes/.gitkeep
