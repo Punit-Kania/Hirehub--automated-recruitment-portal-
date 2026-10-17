@@ -28,13 +28,13 @@ require_once __DIR__ . '/../config/cors.php';
 */
 
 
-header(
+/*header(
     "Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS"
 );
 
 header(
     "Access-Control-Allow-Headers: Content-Type, Authorization, X-User-Id, X-User-Role"
-);
+);*/
 
 header("Access-Control-Allow-Credentials: true");
 
